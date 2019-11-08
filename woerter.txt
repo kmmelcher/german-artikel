@@ -23,3 +23,6 @@ Das Pferd Pferde
 Der Schrank Schränke
 Der Stuhl Stühle
 Der Tisch Tische
+Das Hunt  Hunter
+DerHund   Hunder
+Der Tag   Tagen
