@@ -29,7 +29,7 @@ public class FileClass {
 	 
 	 public void openFileReverse() {
 		 try {
-	            file = new FileWriter("woerter.txt", false);
+	            file = new FileWriter("bibliothek/woerter.txt", false);
 	            write = new PrintWriter(file);
 	        }catch(Exception e) {
 	            System.out.println(e);
@@ -38,7 +38,7 @@ public class FileClass {
 	    
 	 public void openFile() {
 	        try {
-	            file = new FileWriter("woerter.txt", true);
+	            file = new FileWriter("bibliothek/woerter.txt", true);
 	            write = new PrintWriter(file);
 	        }catch(Exception e) {
 	            System.out.println(e);
@@ -56,7 +56,7 @@ public class FileClass {
 		 List <String> content = new ArrayList<String>();
 	        
 	        try {
-				content = Files.readAllLines(Paths.get("woerter.txt"));
+				content = Files.readAllLines(Paths.get("bibliothek/woerter.txt"));
 			} catch (Exception e) {
 				System.out.println("Coudln't read the file");
 			}
@@ -97,7 +97,7 @@ public class FileClass {
 		 int lines = 0;
 	        
 	        try {
-				lines = Files.readAllLines(Paths.get("woerter.txt")).size();
+				lines = Files.readAllLines(Paths.get("bibliothek/woerter.txt")).size();
 			} catch (Exception e) {
 				System.out.println("Coudln't read the file");
 			}
@@ -111,7 +111,7 @@ public class FileClass {
 	       	List <String> content = new ArrayList<String>();
 	        
 	        try {
-				content = Files.readAllLines(Paths.get("woerter.txt"));
+				content = Files.readAllLines(Paths.get("bibliothek/woerter.txt"));
 			} catch (Exception e) {
 				System.out.println("Coudln't read the file");
 			}
@@ -140,7 +140,7 @@ public class FileClass {
 		 String plural="";
 			
 			try {
-				plural = Files.readAllLines(Paths.get("woerter.txt")).get(line);
+				plural = Files.readAllLines(Paths.get("bibliothek/woerter.txt")).get(line);
 			} catch (Exception e) {
 				System.out.println("Couldn't read the file");
 			}
@@ -154,7 +154,7 @@ public class FileClass {
 		String artk="";
 		
 		try {
-			artk = Files.readAllLines(Paths.get("woerter.txt")).get(line);
+			artk = Files.readAllLines(Paths.get("bibliothek/woerter.txt")).get(line);
 		} catch (Exception e) {
 			System.out.println("Couldn't read the file");
 		}
@@ -169,7 +169,7 @@ public class FileClass {
 		 String wort="";
 			
 			try {
-				wort = Files.readAllLines(Paths.get("woerter.txt")).get(line);
+				wort = Files.readAllLines(Paths.get("bibliothek/woerter.txt")).get(line);
 			} catch (Exception e) {
 				System.out.println("Couldn't read the file");
 			}
