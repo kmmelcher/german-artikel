@@ -1,4 +1,4 @@
-package de;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -248,13 +248,13 @@ public class Deutsch extends JFrame {
 				String art = "";
 				
 				if(w.der.isSelected()==true) {
-					art = "Der";		
+					art = "der";		
 				}
 				else if(w.die.isSelected()==true) {
-					art = "Die";
+					art = "die";
 				}
 				else if(w.das.isSelected()==true) {
-					art = "Das";
+					art = "das";
 				}
 				
 				String wo = w.addWort.getText();
@@ -269,7 +269,8 @@ public class Deutsch extends JFrame {
 				w.dm.clear();
 				
 				for(int a=0; a<file.listLines(); a++) {
-					w.dm.addElement(file.getLine(a));
+					String file_line = file.getLine(a);
+					w.dm.addElement(file_line);
 				}
 				
 				w.der.setSelected(false);
@@ -304,9 +305,9 @@ public class Deutsch extends JFrame {
 			//---------- A R T I K E L ----------//
 			
 			if(event.getSource()==a.der) {
-				if(file.getArtikel(file.getIndex(a.wort)).equals("Der")) {
+				if(file.getArtikel(file.getIndex(a.wort)).equals("der")) {
 					a.right++;
-					a.richtig.setText("Richtig: " + a.right);
+					a.richtig.setText("richtig: " + a.right);
 					a.wort.setText(file.getRandomWort(a.NumbersList));
 				}else {
 					a.wrong++;
@@ -317,9 +318,9 @@ public class Deutsch extends JFrame {
 			
 			
 			if(event.getSource()==a.das) {
-				if(file.getArtikel(file.getIndex(a.wort)).equals("Das")) {
+				if(file.getArtikel(file.getIndex(a.wort)).equals("das")) {
 					a.right++;
-					a.richtig.setText("Richtig: " + a.right);
+					a.richtig.setText("richtig: " + a.right);
 					a.wort.setText(file.getRandomWort(a.NumbersList));
 				}else {
 					a.wrong++;
@@ -329,9 +330,9 @@ public class Deutsch extends JFrame {
 			}
 			
 			if(event.getSource()==a.die) {
-				if(file.getArtikel(file.getIndex(a.wort)).equals("Die")) {
+				if(file.getArtikel(file.getIndex(a.wort)).equals("die")) {
 					a.right++;
-					a.richtig.setText("Richtig: " + a.right);
+					a.richtig.setText("richtig: " + a.right);
 					a.wort.setText(file.getRandomWort(a.NumbersList));
 				}else {
 					a.wrong++;
@@ -349,7 +350,7 @@ public class Deutsch extends JFrame {
 				//that means if what you typed is equal to the plural of that word 
 				if(file.getPlural(file.getIndex(p.wort)).equalsIgnoreCase(p.answer.getText())) {
 					p.right++;
-					p.richtig.setText("Richtig: " + p.right);
+					p.richtig.setText("richtig: " + p.right);
 					p.wort.setText(file.getRandomWort(p.NumbersList2));
 					p.answer.setText("");
 				}else {

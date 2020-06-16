@@ -1,4 +1,4 @@
-package de;
+
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -98,7 +98,7 @@ public class Artikel extends JFrame {
 			
 			
 			//richtig
-			richtig = new JTextArea("Richtig: 0");
+			richtig = new JTextArea("richtig: 0");
 			richtig.setFont(font);
 			richtig.setBounds(80,330,180,40);
 			richtig.setBackground(null);

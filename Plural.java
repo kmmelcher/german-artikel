@@ -1,4 +1,4 @@
-package de;
+
 
 import java.awt.*;
 import java.util.*;
@@ -80,7 +80,7 @@ public class Plural extends JFrame {
 		answer.setBounds(100,180,400,50);
 		
 		//richtig
-		richtig = new JTextArea("Richtig: 0");
+		richtig = new JTextArea("richtig: 0");
 		richtig.setFont(font);
 		richtig.setBounds(80,300,180,40);
 		richtig.setBackground(null);

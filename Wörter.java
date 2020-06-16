@@ -1,4 +1,4 @@
-package de;
+
 
 import java.awt.*;
 
@@ -25,7 +25,7 @@ public class Wörter extends JFrame {
 		private Color buttons;
 		
 		
-		DefaultListModel dm = new DefaultListModel();
+		DefaultListModel<String> dm = new DefaultListModel<String>();
 		
 		
 		
@@ -47,7 +47,8 @@ public class Wörter extends JFrame {
 			list.setModel(dm);
 			
 			for(int a=0; a<file.listLines(); a++) {
-				dm.addElement(file.getLine(a));
+				String file_line = file.getLine(a);
+				dm.addElement(file_line);
 			}
 			
 			list.setFixedCellWidth(100);
