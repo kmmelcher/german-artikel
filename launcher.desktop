@@ -2,7 +2,7 @@
 Version=1.0
 Name=ArtikelTrainer
 Exec=java -jar /home/kilian/Computer_Science/Java/de/Main.jar
-Icon=/home/kilian/Pictures/deutschlandicon.svg
+Icon=/home/kilian/Computer_Science/Java/de/deutschlandicon.svg
 Type=Application
 Terminal=false
 Comment=
