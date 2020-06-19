@@ -1,9 +1,5 @@
-
-
 import java.awt.*;
 import java.awt.event.*;
-
-
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -15,9 +11,6 @@ public class Deutsch extends JFrame {
 	
 	//Artikel object
 	Artikel a = new Artikel();
-	
-	//Wörter object
-	Wörter w = new Wörter();
 	
 	//Plural object
 	Plural p = new Plural();
@@ -58,7 +51,7 @@ public class Deutsch extends JFrame {
 		panel.add(m.text);
 		panel.add(m.artikel);
 		panel.add(m.plural);
-		panel.add(m.wörter);
+		//panel.add(m.wörter);
 		panel.add(m.exit);
 		
 		//back to menu
@@ -83,20 +76,6 @@ public class Deutsch extends JFrame {
 		panel.add(a.richtig);
 		panel.add(a.falsch);
 		
-		
-		//-------------- W Ö R T E R -----------------//
-		
-		panel.add(w.scroll);
-		panel.add(w.add);
-		panel.add(w.delete);
-		panel.add(w.der);
-		panel.add(w.die);
-		panel.add(w.das);
-		panel.add(w.search);
-		panel.add(w.addWort);
-		panel.add(w.addPlural);
-		
-		
 		//-------------- P L U R A L -----------------//
 		
 		panel.add(p.text2);
@@ -111,7 +90,7 @@ public class Deutsch extends JFrame {
 		TheHandler handler = new TheHandler();
 		m.artikel.addActionListener(handler);
 		m.plural.addActionListener(handler);
-		m.wörter.addActionListener(handler);
+		//m.wörter.addActionListener(handler);
 		m.exit.addActionListener(handler);
 		backToMenu.addActionListener(handler);
 		
@@ -119,16 +98,6 @@ public class Deutsch extends JFrame {
 		a.der.addActionListener(handler);
 		a.das.addActionListener(handler);
 		a.die.addActionListener(handler);
-		
-		//Listener from wörter
-		w.add.addActionListener(handler);
-		w.delete.addActionListener(handler);
-		w.der.addActionListener(handler);
-		w.die.addActionListener(handler);
-		w.das.addActionListener(handler);
-		w.search.addActionListener(handler);
-		w.addWort.addActionListener(handler);
-		w.addPlural.addActionListener(handler);
 		
 		//Listener from Plural
 		p.answer.addActionListener(handler);
@@ -150,7 +119,6 @@ public class Deutsch extends JFrame {
 		m.text.setVisible(set);
 		m.artikel.setVisible(set);
 		m.plural.setVisible(set);
-		m.wörter.setVisible(set);
 		m.exit.setVisible(set);
 	}
 	
@@ -164,24 +132,6 @@ public class Deutsch extends JFrame {
 		a.richtig.setVisible(set);
 		a.falsch.setVisible(set);
 		backToMenu.setVisible(set);
-	}
-	
-	public void turnWörter(boolean set) {
-		
-		w.scroll.setVisible(set);
-		w.add.setVisible(set);
-		w.delete.setVisible(set);
-		w.search.setVisible(set);
-		w.der.setVisible(set);
-		w.die.setVisible(set);
-		w.das.setVisible(set);
-		w.addWort.setVisible(set);
-		w.addPlural.setVisible(set);
-		w.search.setText("suchen...");
-		w.addWort.setText("Wort eingeben");
-		w.addPlural.setText("Plural eingeben");
-		backToMenu.setVisible(set);
-		
 	}
 	
 	public void turnPlural(boolean set) {
@@ -219,15 +169,9 @@ public class Deutsch extends JFrame {
 				panel.setBackground(letters);
 			}
 			
-			if(event.getSource()==m.wörter) {
-				turnMenu(false);
-				turnWörter(true);
-				panel.setBackground(letters);
-			}
-			
 			if(event.getSource()==backToMenu) {
 				turnArtikel(false);
-				turnWörter(false);
+				//turnWörter(false);
 				turnPlural(false);
 				turnMenu(true);
 			}
@@ -237,71 +181,7 @@ public class Deutsch extends JFrame {
 				close();
 			}
 			
-			
-			
-			
-			//---------- W Ö R T E R ---------//
-			
-			//add a word to the list and the file
-			if(event.getSource()==w.add) {
-				
-				String art = "";
-				
-				if(w.der.isSelected()==true) {
-					art = "der";		
-				}
-				else if(w.die.isSelected()==true) {
-					art = "die";
-				}
-				else if(w.das.isSelected()==true) {
-					art = "das";
-				}
-				
-				String wo = w.addWort.getText();
-				String pl = w.addPlural.getText();
-				String t = art + " " + wo + " " + pl;
-				file.openFile();
-				file.addText(t);
-				file.closeFile();
-				
-				file.SortAll();
-				
-				w.dm.clear();
-				
-				for(int a=0; a<file.listLines(); a++) {
-					String file_line = file.getLine(a);
-					w.dm.addElement(file_line);
-				}
-				
-				w.der.setSelected(false);
-				w.das.setSelected(false);
-				w.die.setSelected(false);
-				w.addWort.setText("Wort hinzufügen");
-				w.addPlural.setText("Plural hinzufügen");
-				
-				
-			}
-			
-			if(event.getSource()==w.delete) {
-				try {
-				int index = w.list.getSelectedIndex();
-				w.dm.removeElementAt(index);
-				file.removeLine(index);
-				}catch(Exception e) {
-					JOptionPane.showMessageDialog(null, "There is no item selected");
-				}
-			}
-			
-			
-			if(event.getSource()==w.search) {
-				
-				file.search(w.search.getText(), w.list);	
-				
-			}
-			
-			
-			
-			
+						
 			//---------- A R T I K E L ----------//
 			
 			if(event.getSource()==a.der) {

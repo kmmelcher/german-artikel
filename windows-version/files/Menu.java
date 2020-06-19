@@ -1,15 +1,11 @@
-
-
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.*;
 
 public class Menu extends JFrame {
 	
 	public JButton artikel;
 	public JButton plural;
-	public JButton wörter;
 	public JButton exit;
 	public JTextArea text;
 	private Font font;
@@ -48,13 +44,6 @@ public class Menu extends JFrame {
 		plural.setBackground(buttons);
 		plural.setForeground(letters);
 		plural.setBounds(125,210,350,60);
-		
-		//Wörter
-		wörter = new JButton("Wörter");
-		wörter.setFont(font);
-		wörter.setBackground(buttons);
-		wörter.setForeground(letters);
-		wörter.setBounds(125,290,350,60);
 
 		//exit
 		exit = new JButton("exit");
