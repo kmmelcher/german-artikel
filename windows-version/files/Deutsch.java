@@ -51,8 +51,9 @@ public class Deutsch extends JFrame {
 		panel.add(m.text);
 		panel.add(m.artikel);
 		panel.add(m.plural);
-		//panel.add(m.wörter);
+		panel.add(m.authors);
 		panel.add(m.exit);
+		panel.add(m.designer);
 		
 		//back to menu
 		backToMenu = new JButton("<--Züruck zum Menü");
@@ -120,6 +121,8 @@ public class Deutsch extends JFrame {
 		m.artikel.setVisible(set);
 		m.plural.setVisible(set);
 		m.exit.setVisible(set);
+		m.authors.setVisible(set);
+		m.designer.setVisible(set);
 	}
 	
 		
