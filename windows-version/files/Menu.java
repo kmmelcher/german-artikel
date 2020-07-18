@@ -8,7 +8,7 @@ public class Menu extends JFrame {
 	public JButton plural;
 	public JButton exit;
 	public JTextArea text;
-	public JTextArea authors;
+	public JTextArea programmer;
 	public JTextArea designer;
 	private Font font;
 	private Color buttons;
@@ -57,19 +57,19 @@ public class Menu extends JFrame {
 		//Authors of the application
 
 		//Programmer and author
-		authors =  new JTextArea("Made by Kilian Melcher");
-		authors.setBackground(null);
-		authors.setFont(new Font("Calibri", Font.BOLD, 16));
-		authors.setEditable(false);
-		authors.setForeground(new Color(0,0,0));
-		authors.setBounds(190,418, 230,30);
+		programmer =  new JTextArea("Made by Kilian Melcher");
+		programmer.setBackground(null);
+		programmer.setFont(new Font("Calibri", Font.BOLD, 16));
+		programmer.setEditable(false);
+		programmer.setForeground(new Color(204,204,205));
+		programmer.setBounds(190,418, 230,30);
 
 		//Designer
 		designer =  new JTextArea("Designed by Isabella Costa");
 		designer.setBackground(null);
 		designer.setFont(new Font("Calibri", Font.BOLD, 16));
 		designer.setEditable(false);
-		designer.setForeground(new Color(0,0,0));
+		designer.setForeground(new Color(204,204,205));
 		designer.setBounds(180,445,240,30);
 		
 	}
